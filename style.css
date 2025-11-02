@@ -1,0 +1,126 @@
+:root {
+    --background-color: #f0f0f0;
+    --text-color: #333;
+    --timer-background: white;
+    --timer-ready-background: #4cd964;
+    --progress-bar-color: #5ac8fa;
+    --button-background: #007aff;
+    --button-text-color: white;
+    --reset-button-background: #ff9500;
+}
+
+.dark-mode {
+    --background-color: #1c1c1e;
+    --text-color: #f2f2f7;
+    --timer-background: #2c2c2e;
+    --timer-ready-background: #34c759;
+    --progress-bar-color: #5856d6;
+    --button-background: #0a84ff;
+    --reset-button-background: #ff9f0a;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1c1c1e;
+        --text-color: #f2f2f7;
+        --timer-background: #2c2c2e;
+        --timer-ready-background: #34c759;
+        --progress-bar-color: #5856d6;
+        --button-background: #0a84ff;
+        --reset-button-background: #ff9f0a;
+    }
+}
+
+body {
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.btn {
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+#theme-toggle-btn {
+    background-color: var(--reset-button-background);
+}
+
+#timers-container {
+    display: grid;
+    gap: 15px;
+}
+
+.timer {
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+    background-color: var(--timer-background);
+}
+
+.timer-ready {
+    background-color: var(--timer-ready-background);
+}
+
+.timer-info {
+    flex-grow: 1;
+}
+
+.timer-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.timer-time {
+    font-size: 22px;
+    color: var(--text-color);
+}
+
+.timer-buttons .btn {
+    margin-left: 10px;
+}
+
+.reset-btn {
+    background-color: var(--reset-button-background);
+}
+
+.reset-btn:hover {
+    opacity: 0.8;
+}
