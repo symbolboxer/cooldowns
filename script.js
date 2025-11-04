@@ -19,6 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const formatTime = (seconds) => {
+    if (seconds > 86400) {
+      const days = Math.floor(seconds / 86400);
+      return `${days} day${days > 1 ? "s" : ""}`;
+    }
+    if (seconds > 3600) {
+      const h = Math.floor(seconds / 3600);
+      const m = Math.floor((seconds % 3600) / 60);
+      return `${h.toString().padStart(2, "0")}:${m.toString().padStart(2, "0")}`;
+    }
     const m = Math.floor(seconds / 60);
     const s = seconds % 60;
     return `${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
